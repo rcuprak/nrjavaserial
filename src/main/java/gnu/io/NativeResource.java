@@ -89,6 +89,7 @@ public class NativeResource {
 	private void inJarLoad(String name)throws UnsatisfiedLinkError, NativeResourceException{
 		//start by assuming the library can be loaded from the jar
 		InputStream resourceSource = locateResource(name);
+		System.out.println(":: Name: " + name);
 		File resourceLocation = prepResourceLocation(name);
 		try {
 			copyResource(resourceSource, resourceLocation);
@@ -104,7 +105,7 @@ public class NativeResource {
 
 	private void loadLib(String name) throws NativeResourceException {
 		try {
-			if(OSUtil.isARM()) {
+			if(OSUtil.isLinux() && OSUtil.isARM()) {
 				//System.err.println("Attempting arm variants");
 				for(String libName : OSUtil.is64Bit() ? ARM64_LIBS : ARM32_LIBS) {
 					try {

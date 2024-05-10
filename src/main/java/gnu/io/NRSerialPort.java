@@ -72,7 +72,7 @@ import gnu.io.rfc2217.TelnetSerialPort;
 public class NRSerialPort
 {
 
-    private SerialPort serial;
+    private CommPort serial;
     private String port = null;
     private boolean connected = false;
     private int baud = 115200;

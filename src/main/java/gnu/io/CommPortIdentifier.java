@@ -57,11 +57,10 @@
 --------------------------------------------------------------------------*/
 package  gnu.io;
 
-import  java.io.FileDescriptor;
-import java.util.ArrayList;
+import java.io.FileDescriptor;
+import java.util.Enumeration;
 import java.util.HashMap;
-import  java.util.Vector;
-import  java.util.Enumeration;
+import java.util.Vector;
 
 /**
 * @author Trent Jarvi
@@ -417,7 +416,7 @@ public class CommPortIdentifier extends Object /* extends Vector? */
 	@SuppressWarnings("unused")
 	private boolean HideOwnerEvents;
 
-	public RXTXPort open(String TheOwner, int i) 
+	public CommPort open(String TheOwner, int i)
 		throws gnu.io.PortInUseException 
 	{ 
 		if(debug) System.out.println("CommPortIdentifier:open("+TheOwner + ", " +i+")");

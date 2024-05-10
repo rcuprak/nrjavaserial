@@ -5,6 +5,7 @@ import gnu.io.NoSuchPortException;
 import gnu.io.PortInUseException;
 import gnu.io.RXTXPort;
 import gnu.io.UnsupportedCommOperationException;
+import gnu.io.CommPort;
 
 public class RxTxPortCreator implements SerialPortCreator<RXTXPort> {
 
@@ -14,8 +15,8 @@ public class RxTxPortCreator implements SerialPortCreator<RXTXPort> {
 	}
 
 	@Override
-	public RXTXPort createPort(String port) throws NoSuchPortException, UnsupportedCommOperationException, PortInUseException {
-        RXTXPort comm = null;
+	public CommPort createPort(String port) throws NoSuchPortException, UnsupportedCommOperationException, PortInUseException {
+        CommPort comm = null;
         CommPortIdentifier ident = null;
         if ((System.getProperty("os.name").toLowerCase().indexOf("linux") != -1))
         {
